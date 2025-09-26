@@ -5,12 +5,12 @@ import { Star, ChevronLeft, ChevronRight, Users, Building, Award } from 'lucide-
 import { useState } from 'react';
 
 const clients = [
-  { id: 1, name: 'TechCorp Solutions', logo: 'https://via.placeholder.com/150x80/dc2626/white?text=TechCorp' },
-  { id: 2, name: 'Innovation Labs', logo: 'https://via.placeholder.com/150x80/1f2937/white?text=InnovationLabs' },
-  { id: 3, name: 'Digital Dynamics', logo: 'https://via.placeholder.com/150x80/dc2626/white?text=DigitalDynamics' },
-  { id: 4, name: 'Future Systems', logo: 'https://via.placeholder.com/150x80/1f2937/white?text=FutureSystems' },
-  { id: 5, name: 'Alpha Technologies', logo: 'https://via.placeholder.com/150x80/dc2626/white?text=AlphaTech' },
-  { id: 6, name: 'Beta Solutions', logo: 'https://via.placeholder.com/150x80/1f2937/white?text=BetaSolutions' },
+  { id: 1, name: 'Google', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg' },
+  { id: 2, name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg' },
+  { id: 3, name: 'Amazon', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' },
+  { id: 4, name: 'Facebook', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg' },
+  { id: 5, name: 'Apple', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg' },
+  { id: 6, name: 'Netflix', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg' },
 ];
 
 const testimonials = [
