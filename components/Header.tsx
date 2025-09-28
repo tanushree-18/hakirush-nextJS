@@ -39,9 +39,7 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-red-600 rounded-lg group-hover:scale-110 transition-transform duration-300">
-              <Trophy className="h-6 w-6 text-white" />
-            </div>
+            <img src="/logo.png" alt="Logo" className="h-8 w-8 object-contain group-hover:scale-110 transition-transform duration-300" />
             <span className="text-xl font-bold text-white font-sans" style={{fontFamily: 'Montserrat, Arial, sans-serif'}}>HAKIRUSH</span>
           </Link>
 
