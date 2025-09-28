@@ -34,11 +34,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-gray-900/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900/95 backdrop-blur-md shadow-lg"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -46,7 +42,7 @@ const Header = () => {
             <div className="p-2 bg-red-600 rounded-lg group-hover:scale-110 transition-transform duration-300">
               <Trophy className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">HAKIRUSH</span>
+            <span className="text-xl font-bold text-white font-sans" style={{fontFamily: 'Montserrat, Arial, sans-serif'}}>HAKIRUSH</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -55,9 +51,8 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative text-sm font-medium transition-colors duration-300 hover:text-red-400 ${
-                  pathname === item.href ? 'text-red-400' : 'text-gray-300'
-                }`}
+                className={`relative text-sm font-semibold transition-colors duration-300 hover:text-red-400 font-sans text-white`}
+                style={{ color: pathname === item.href ? '#ef4444' : '#fff', fontFamily: 'Montserrat, Arial, sans-serif' }}
               >
                 {item.name}
                 {pathname === item.href && (

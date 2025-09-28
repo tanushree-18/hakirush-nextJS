@@ -61,10 +61,14 @@ const serviceCards = [
 ];
 
 export default function Services() {
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [expandedCards, setExpandedCards] = useState(Array(serviceCards.length).fill(false));
 
   const toggleCard = (index: number) => {
-    setExpandedCard(expandedCard === index ? null : index);
+    setExpandedCards(prev => {
+      const updated = [...prev];
+      updated[index] = !updated[index];
+      return updated;
+    });
   };
 
   return (
@@ -93,8 +97,7 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {serviceCards.map((service, index) => {
               const IconComponent = service.icon;
-              const isExpanded = expandedCard === index;
-
+              const isExpanded = expandedCards[index];
               return (
                 <motion.div
                   key={index}
@@ -102,7 +105,8 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                  className={`bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow ${isExpanded ? 'z-10' : ''}`}
+                  style={{ position: 'relative', minHeight: isExpanded ? 'auto' : '180px', height: isExpanded ? 'auto' : '180px' }}
                 >
                   <div className="p-8">
                     <div className="flex items-center mb-6">
@@ -116,7 +120,6 @@ export default function Services() {
                         <p className="text-gray-600">{service.description}</p>
                       </div>
                     </div>
-
                     <button
                       onClick={() => toggleCard(index)}
                       className="flex items-center justify-between w-full text-red-600 hover:text-red-700 font-semibold transition-colors"
@@ -129,7 +132,6 @@ export default function Services() {
                         <ChevronDown className="h-5 w-5" />
                       </motion.div>
                     </button>
-
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
@@ -138,6 +140,7 @@ export default function Services() {
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden"
+                          style={{ zIndex: 20, position: 'relative' }}
                         >
                           <div className="mt-6 pt-6 border-t border-gray-200">
                             <h4 className="font-semibold text-gray-900 mb-4">Key Features:</h4>
